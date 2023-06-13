@@ -4,6 +4,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <style>
+      label {
+        display: inline-block;
+        width: 200px;
+      }
+    </style>
 @include('admin.css')
   </head>
   <body>
@@ -35,7 +41,53 @@
       @include('admin.navbar')
 
         <!-- partial -->
-        @include('admin.body')
+
+        <div class="container-fluid page-body-wrapper">
+
+          <div class="container" align="center" style="padding-top: 100px;">
+          <h1>Add Doctors</h1>
+          
+            <form action="">
+
+              <div style="padding: 15px;">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" placeholder="Doctors Name" style="color: black;">
+              </div>
+              <div style="padding: 15px;">
+                <label for="name">Number</label>
+                <input type="number" name="number" id="number" placeholder="Doctors Number" style="color: black;">
+              </div>
+              <div style="padding: 15px;">
+                <label for="name">Speciality</label>
+
+                <select name="speciality" id="speciality"  style="color: black;">
+                  <option value="first">--Select--</option>
+                  <option value="neurosurgeon">Neurosurgeon</option>
+                  <option value="cardiologist">Cardiologist</option>
+                  <option value="oncologist">Oncologist</option>
+                  <option value="radiologist">Radiologist</option>
+                  <option value="psychiatrist">Psychiatrist</option>
+                </select>
+
+              </div>
+              <div style="padding: 15px;">
+                <label for="name">Room Number</label>
+                <input type="room" name="room" id="room" placeholder="Room Number" style="color: black;">
+              </div>
+
+              <div style="padding: 15px;">
+                <label for="name">Doctors Image</label>
+                <input type="file" name="file" id="file" style="color: black;">
+              </div>
+
+              <input type="submit" value="Submit" class="btn btn-success">
+
+            </form>
+          
+        </div>
+
+        </div>
+        
           <!-- content-wrapper ends -->
           <!-- partial:partials/_footer.html -->
           <footer class="footer">
