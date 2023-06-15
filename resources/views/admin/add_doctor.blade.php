@@ -45,9 +45,23 @@
         <div class="container-fluid page-body-wrapper">
 
           <div class="container" align="center" style="padding-top: 100px;">
+
+            @if(session()->has('message'))
+            <div class="alert alert-success">
+              <button class="close" type="button" data-dismiss="alert">
+                x
+              </button>
+
+              {{ session()->get('message') }}
+
+            </div>
+            @endif
+
           <h1>Add Doctors</h1>
           
-            <form action="">
+            <form action="{{ url('upload_doctor') }}" method="POST" enctype="multipart/form-data">
+
+              @csrf
 
               <div style="padding: 15px;">
                 <label for="name">Name</label>
@@ -55,10 +69,10 @@
               </div>
               <div style="padding: 15px;">
                 <label for="name">Number</label>
-                <input type="number" name="number" id="number" placeholder="Doctors Number" style="color: black;">
+                <input type="number" name="phone" id="phone" placeholder="Doctors Number" style="color: black;">
               </div>
               <div style="padding: 15px;">
-                <label for="name">Speciality</label>
+                <label for="speciality">Speciality</label>
 
                 <select name="speciality" id="speciality"  style="color: black;">
                   <option value="first">--Select--</option>
