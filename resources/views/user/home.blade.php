@@ -22,10 +22,21 @@
 </head>
 <body>
 
+
   <!-- Back to top button -->
   <div class="back-to-top"></div>
 
   @include('user.header')
+
+  
+  @if(session()->has('message'))
+  <div class="alert alert-success">
+    <button type="button" class="close" data-dismis="alert">
+      x
+    </button>
+    {{ session()->get('message') }}
+  </div>
+  @endif
 
   <div class="page-hero bg-image overlay-dark" style="background-image: url(../assets/img/bg_image_1.jpg);">
     <div class="hero-section">

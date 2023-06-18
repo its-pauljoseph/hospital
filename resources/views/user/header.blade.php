@@ -41,25 +41,29 @@
         <div class="collapse navbar-collapse" id="navbarSupport">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home</a>
+              <a class="nav-link" href="{{ url('/') }}">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="about.html">About Us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="doctors.html">Doctors</a>
+              <a class="nav-link" href="{{ url('#') }}">Doctors</a>
             </li>
+            
             <li class="nav-item">
-              <a class="nav-link" href="blog.html">News</a>
+              <a class="nav-link" href="contact.html">Contact Us</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
-            </li>
+
             <li class="nav-item">
 
                 @if (Route::has('login'))
                     
                 @auth
+
+                <li class="nav-item">
+              <a class="nav-link" href="{{ url('myappointment') }}">My Appointments</a>
+            </li>
+
                 <x-app-layout>
                 </x-app-layout>
                 @else

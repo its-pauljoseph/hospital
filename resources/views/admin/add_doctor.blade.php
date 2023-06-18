@@ -45,7 +45,7 @@
         <div class="container-fluid page-body-wrapper">
 
           <div class="container" align="center" style="padding-top: 100px;">
-
+{{-- 
             @if(session()->has('message'))
             <div class="alert alert-success">
               <button class="close" type="button" data-dismiss="alert">
@@ -55,7 +55,16 @@
               {{ session()->get('message') }}
 
             </div>
-            @endif
+            @endif --}}
+
+                @if(session()->has('message'))
+                <div class="alert alert-success">
+                  <button type="button" class="close" data-dismis="alert">
+                    x
+                  </button>
+                  {{ session()->get('message') }}
+                </div>
+                @endif
 
           <h1>Add Doctors</h1>
           
@@ -65,7 +74,7 @@
 
               <div style="padding: 15px;">
                 <label for="name">Name</label>
-                <input type="text" name="name" id="name" placeholder="Doctors Name" style="color: black;">
+                <input type="text" name="doctor" id="name" placeholder="Doctors Name" style="color: black;">
               </div>
               <div style="padding: 15px;">
                 <label for="name">Number</label>
